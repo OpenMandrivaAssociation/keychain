@@ -1,6 +1,6 @@
 %define	name	keychain
 %define	version 2.6.8
-%define	release	%mkrel 4
+%define	release	%mkrel 5
 
 Summary:	Keychain manages ssh-agent to minimise passphrase entry for ssh
 Name:		%name
