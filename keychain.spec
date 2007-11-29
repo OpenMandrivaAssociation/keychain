@@ -1,6 +1,6 @@
 %define	name	keychain
 %define	version 2.6.8
-%define	release	%mkrel 5
+%define	release	%mkrel 6
 
 Summary:	Keychain manages ssh-agent to minimise passphrase entry for ssh
 Name:		%name
@@ -37,12 +37,13 @@ Hint: If you get tired of keychain, delete ~/.keychain
 %install
 rm -rf %{buildroot}
 
-install -d m 755 %{buildroot}/%{_bindir} %{buildroot}/%{_sysconfdir}/profile.d
-install -m 755 %{name} %{buildroot}/%{_bindir}
-install -m 755 %{SOURCE1} %{buildroot}/%{_sysconfdir}/profile.d/99%{name}.sh
-install -m 755 %{SOURCE2} %{buildroot}/%{_sysconfdir}/profile.d/99%{name}.csh
-install -d %{buildroot}/%{_mandir}/man1/
-install -m 644 keychain.1 %{buildroot}/%{_mandir}/man1/
+install -d -m 755 %{buildroot}%{_bindir}
+install -m 755 %{name} %{buildroot}%{_bindir}
+install -d -m 755 %{buildroot}%{_sysconfdir}/profile.d
+install -m 644 %{SOURCE1} %{buildroot}%{_sysconfdir}/profile.d/99%{name}.sh
+install -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/profile.d/99%{name}.csh
+install -d -m 755 %{buildroot}%{_mandir}/man1/
+install -m 644 keychain.1 %{buildroot}%{_mandir}/man1/
 
 %clean
 rm -rf %{buildroot}
