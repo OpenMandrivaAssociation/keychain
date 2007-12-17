@@ -14,7 +14,6 @@ Source1:	%name.profile.sh
 Source2:	%name.profile.csh
 Requires:	openssh-askpass openssh-clients gnupg2
 BuildArch:	noarch
-BuildRoot:	%_tmppath/%name-%version
 
 %description
 Keychain is a manager for OpenSSH, ssh.com, Sun SSH and GnuPG agents.
