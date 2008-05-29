@@ -1,20 +1,17 @@
-%define	name	keychain
-%define	version 2.6.8
-%define	release	%mkrel 7
-
-Summary:	Keychain manages ssh-agent to minimise passphrase entry for ssh
-Name:		%name
-Version:	%version
-Release:	%release
-License:	GPL
-Group:		Networking/Remote access
-URL:		http://www.gentoo.org/proj/en/%{name}/
-Source0:	http://dev.gentoo.org/~agriffis/keychain/%name-%version.tar.bz2
-Source1:	%name.profile.sh
-Source2:	%name.profile.csh
-Requires:	openssh-askpass openssh-clients gnupg2
-BuildArch:	noarch
-BuildRoot:	%_tmppath/%name-%version
+Name: keychain
+Version: 2.6.8
+Release: %mkrel 8
+Summary: Keychain manages ssh-agent to minimise passphrase entry for ssh
+License: GPL
+Group: Networking/Remote access
+URL: http://www.gentoo.org/proj/en/%{name}/
+Source0: http://dev.gentoo.org/~agriffis/keychain/%name-%version.tar.bz2
+Source1: %name.profile.sh
+Source2: %name.profile.csh
+Requires: openssh-askpass openssh-clients 
+Requires: gnupg2
+BuildArch: noarch
+BuildRoot: %_tmppath/%name-%version
 
 %description
 Keychain is a manager for OpenSSH, ssh.com, Sun SSH and GnuPG agents.
