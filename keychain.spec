@@ -1,6 +1,6 @@
 Name: keychain
 Version: 2.6.8
-Release: %mkrel 8
+Release: %mkrel 9
 Summary: Keychain manages ssh-agent to minimise passphrase entry for ssh
 License: GPL
 Group: Networking/Remote access
