@@ -1,17 +1,18 @@
-Name: keychain
-Version: 2.6.8
-Release: %mkrel 10
-Summary: Keychain manages ssh-agent to minimise passphrase entry for ssh
-License: GPL
-Group: Networking/Remote access
-URL: http://www.gentoo.org/proj/en/%{name}/
-Source0: http://dev.gentoo.org/~agriffis/keychain/%name-%version.tar.bz2
-Source1: %name.profile.sh
-Source2: %name.profile.csh
-Requires: openssh-askpass openssh-clients 
-Requires: gnupg2
-BuildArch: noarch
-BuildRoot: %_tmppath/%name-%version
+Name:		keychain
+Version:	2.6.8
+Release:	%mkrel 11
+Summary:	Keychain manages ssh-agent to minimise passphrase entry for ssh
+License:	GPLv2
+Group:		Networking/Remote access
+URL:		http://www.gentoo.org/proj/en/%{name}/
+Source0:	http://dev.gentoo.org/~agriffis/keychain/%name-%version.tar.bz2
+Source1:	%{name}.profile.sh
+Source2:	%{name}.profile.csh
+Requires:	openssh-askpass
+Requires:	openssh-clients 
+Requires:	gnupg2
+BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Keychain is a manager for OpenSSH, ssh.com, Sun SSH and GnuPG agents.
@@ -24,7 +25,7 @@ local machine is rebooted.
 Run keychain once manually per user, after which keychain will run (quietly) 
 every time you log in (from a profile script).
 
-Hint: If you get tired of keychain, delete ~/.keychain
+Hint: If you get tired of keychain, delete ~/.keychain .
 
 %prep
 %setup -q
@@ -48,7 +49,6 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc README ChangeLog 
-%_bindir/*
+%{_bindir}/*
 %{_sysconfdir}/profile.d/*
 %{_mandir}/man1/%{name}*
-
