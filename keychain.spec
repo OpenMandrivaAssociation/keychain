@@ -8,6 +8,7 @@ URL:		http://www.gentoo.org/proj/en/%{name}/
 Source0:	http://dev.gentoo.org/~agriffis/keychain/%name-%version.tar.bz2
 Source1:	%{name}.profile.sh
 Source2:	%{name}.profile.csh
+Patch500:	keychain-2.6.8-parse_gpg_keys.patch
 Requires:	openssh-askpass
 Requires:	openssh-clients 
 Requires:	gnupg2
@@ -29,6 +30,7 @@ Hint: If you get tired of keychain, delete ~/.keychain .
 
 %prep
 %setup -q
+%patch500 -p1 -b .parse_gpg_keys
 
 %build
 
