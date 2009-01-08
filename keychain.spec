@@ -10,6 +10,7 @@ Source1:	%{name}.profile.sh
 Source2:	%{name}.profile.csh
 Patch500:	keychain-2.6.8-parse_gpg_keys.patch
 Patch501:	keychain-2.6.8-load_gpg_keys.patch
+Patch502:	keychain-2.6.8-false_missing_key.patch
 Requires:	openssh-askpass
 Requires:	openssh-clients 
 Requires:	gnupg2
@@ -33,6 +34,7 @@ Hint: If you get tired of keychain, delete ~/.keychain .
 %setup -q
 %patch500 -p1 -b .parse_gpg_keys
 %patch501 -p1 -b .load_gpg_keys
+%patch502 -p1 -b .false_missing_key
 
 %build
 
