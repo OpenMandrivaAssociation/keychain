@@ -1,6 +1,6 @@
 Name:		keychain
 Version:	2.6.8
-Release:	%mkrel 16
+Release:	%mkrel 17
 Summary:	Keychain manages ssh-agent to minimise passphrase entry for ssh
 License:	GPLv2
 Group:		Networking/Remote access
@@ -9,8 +9,8 @@ Source0:	http://dev.gentoo.org/~agriffis/keychain/%name-%version.tar.bz2
 Source1:	%{name}.profile.sh
 Source2:	%{name}.profile.csh
 Patch500:	keychain-2.6.8-parse_gpg_keys.patch
-Requires:	openssh-askpass
-Requires:	openssh-clients 
+Suggests:	openssh-askpass
+Requires:	openssh-clients
 Requires:	gnupg2
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -23,7 +23,7 @@ This dramatically reduces the number of times you need to enter your
 passphrase from once per new login session to once every time your
 local machine is rebooted.
 
-Run keychain once manually per user, after which keychain will run (quietly) 
+Run keychain once manually per user, after which keychain will run (quietly)
 every time you log in (from a profile script).
 
 Hint: If you get tired of keychain, delete ~/.keychain .
@@ -50,7 +50,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc README ChangeLog 
+%doc README ChangeLog
 %{_bindir}/*
 %{_sysconfdir}/profile.d/*
 %{_mandir}/man1/%{name}*
