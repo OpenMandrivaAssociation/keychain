@@ -1,5 +1,5 @@
 Name:		keychain
-Version:	2.6.9
+Version:	2.7.0
 Release:	%mkrel 1
 Summary:	Keychain manages ssh-agent to minimise passphrase entry for ssh
 License:	GPLv2
@@ -44,14 +44,14 @@ install -d -m 755 %{buildroot}%{_sysconfdir}/profile.d
 install -m 644 %{SOURCE1} %{buildroot}%{_sysconfdir}/profile.d/99%{name}.sh
 install -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/profile.d/99%{name}.csh
 install -d -m 755 %{buildroot}%{_mandir}/man1/
-install -m 644 keychain.1 %{buildroot}%{_mandir}/man1/
+install -m 644 keychain.1.gz %{buildroot}%{_mandir}/man1/
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc README.rst ChangeLog COPYING keychain.pod
+%doc README.rst ChangeLog COPYING.txt keychain.pod keychain.txt
 %{_bindir}/*
 %{_sysconfdir}/profile.d/*
 %{_mandir}/man1/%{name}*
