@@ -1,7 +1,7 @@
+Summary:	Keychain manages ssh-agent to minimise passphrase entry for ssh
 Name:		keychain
 Version:	2.7.1
-Release:	%mkrel 4
-Summary:	Keychain manages ssh-agent to minimise passphrase entry for ssh
+Release:	5
 License:	GPLv2
 Group:		Networking/Remote access
 URL:		http://www.funtoo.org/en/security/%{name}/intro
@@ -13,7 +13,6 @@ Suggests:	openssh-askpass
 Requires:	openssh-clients
 Requires:	gnupg2
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Keychain is a manager for OpenSSH, ssh.com, Sun SSH and GnuPG agents.
@@ -36,8 +35,6 @@ Hint: If you get tired of keychain, delete ~/.keychain .
 %make
 
 %install
-rm -rf %{buildroot}
-
 install -d -m 755 %{buildroot}%{_bindir}
 install -m 755 %{name} %{buildroot}%{_bindir}
 install -d -m 755 %{buildroot}%{_sysconfdir}/profile.d
@@ -46,12 +43,9 @@ install -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/profile.d/99%{name}.csh
 install -d -m 755 %{buildroot}%{_mandir}/man1/
 install -m 644 keychain.1 %{buildroot}%{_mandir}/man1/
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc README.rst ChangeLog COPYING.txt keychain.pod keychain.txt
 %{_bindir}/*
 %{_sysconfdir}/profile.d/*
 %{_mandir}/man1/%{name}*
+
