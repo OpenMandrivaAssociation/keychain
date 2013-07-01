@@ -1,4 +1,4 @@
-Summary:	Keychain manages ssh-agent to minimise passphrase entry for ssh
+Summary:	Manages ssh-agent to minimise passphrase entry for ssh
 Name:		keychain
 Version:	2.7.1
 Release:	6
