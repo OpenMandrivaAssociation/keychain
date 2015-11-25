@@ -1,11 +1,11 @@
 Summary:	Manages ssh-agent to minimise passphrase entry for ssh
 Name:		keychain
-Version:	2.7.1
-Release:	15
+Version:	2.8.2
+Release:	1
 License:	GPLv2
 Group:		Networking/Remote access
 Url:		http://www.funtoo.org/en/security/%{name}/intro
-Source0:	http://www.funtoo.org/archive/%{name}/%name-%version.tar.bz2
+Source0:	http://www.funtoo.org/archive/%{name}/%name-%version.tar.gz
 Source1:	%{name}.profile.sh
 Source2:	%{name}.profile.csh
 #Patch500:	keychain-2.6.8-parse_gpg_keys.patch
@@ -44,7 +44,7 @@ install -d -m 755 %{buildroot}%{_mandir}/man1/
 install -m 644 keychain.1 %{buildroot}%{_mandir}/man1/
 
 %files
-%doc README.rst ChangeLog COPYING.txt keychain.pod keychain.txt
+%doc README.md ChangeLog COPYING.txt
 %{_bindir}/*
 %{_sysconfdir}/profile.d/*
 %{_mandir}/man1/%{name}*
