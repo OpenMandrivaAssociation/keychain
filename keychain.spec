@@ -1,7 +1,7 @@
 Summary:	Manages ssh-agent to minimise passphrase entry for ssh
 Name:		keychain
 Version:	2.8.2
-Release:	3
+Release:	4
 License:	GPLv2
 Group:		Networking/Remote access
 Url:		http://www.funtoo.org/en/security/%{name}/intro
