@@ -1,4 +1,2 @@
-removed_sources:
-  keychain-2.7.1.tar.bz2: e7ad7da374ba81e57792bb2695eb6c352f769de7
 sources:
-  keychain-2.8.2.tar.gz: 565d09197b9ab38831fb37d78a179e108622b2d5
+  2.8.5.tar.gz: 220d641ae959576ae95f6a3f42f3e2176ec097c0
