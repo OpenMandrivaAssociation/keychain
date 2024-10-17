@@ -4,7 +4,7 @@ Version:	2.8.5
 Release:	2
 License:	GPLv2
 Group:		Networking/Remote access
-Url:		http://www.funtoo.org/en/security/%{name}/intro
+Url:		https://www.funtoo.org/en/security/%{name}/intro
 Source0:	https://github.com/funtoo/keychain/archive/%{version}.tar.gz
 Source1:	%{name}.profile.sh
 Source2:	%{name}.profile.csh
