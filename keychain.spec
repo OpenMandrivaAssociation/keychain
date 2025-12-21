@@ -13,6 +13,7 @@ Requires:	openssh-clients
 Requires:	gnupg2
 BuildArch:	noarch
 
+BuildRequires:	make
 %description
 Keychain is a manager for OpenSSH, ssh.com, Sun SSH and GnuPG agents.
 It acts as a front-end to the agents, allowing you to easily have one
